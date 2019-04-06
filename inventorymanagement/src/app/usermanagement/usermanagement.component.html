@@ -1,0 +1,23 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form_class">
+            <form >
+                <div class="logindiv">Login</div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Username</label>
+                  <input type="email" class="form-control"  aria-describedby="emailHelp" name="username"[(ngModel)]="this.username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" placeholder="Password" name="password"[(ngModel)]="this.password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" (click)="loginFunc()" >Login</button>
+              </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</section>

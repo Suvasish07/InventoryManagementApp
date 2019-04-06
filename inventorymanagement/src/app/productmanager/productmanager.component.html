@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand txt-color">Product manager</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item dropdown">
+       
+      </li>
+      <li class="nav-item">
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <i style="font-size:24px" class="fa txt-color" style="cursor:pointer" (click)="logoutFunc()">&#xf08b; logout</i>
+    </form>
+  </div>
+</nav>
+
+<section class="paddingsection">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-4 products">
+        <div class="col-sm-12 no-padding pd-class" >
+          <p class="cls_prod">Products</p>
+        </div>
+        <div class="col-sm-12 no-padding pddetails-class" >
+            <ul class="product-ul-class" >
+                <li class="pd-li-class" *ngFor="let product of this.product"><span (click)="getParticularProduct(product._id)"><p style="float:left;padding-top: 3%;padding-left: 2%;">{{product.name}}</p><p style="float:right;padding-top: 3%;padding-right: 2%;">$ {{product.price}}</p></span></li>
+              </ul> 
+          </div>
+        </div>
+        <div class="col-sm-8 products-details"  >
+          <div class="col-sm-12 prodcutcount-class">
+            <p style="margin-top:2px;padding:10px">Product count {{this.totalproduct}} </p>
+          </div>
+          <div class="col-sm-12 no-padding" style="border:1px solid blue;margin-top: 4%;border-radius:4px 4px 4px 4px; " >
+              <div class="col-sm-12 no-padding pd-class" >
+                  <span><p style="float:left" class="cls_prodetail">Product Details</p><p style="float:right;color:white;padding-right: 3%;padding-top: 1%;">{{this.name}}</p></span>
+              </div>
+                <div class="col-sm-12 pddetails-class" >
+                    <div class="form_class">
+                        <form style="    margin-top: 15Px;" >
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Name</label>
+                              <input type="text" class="form-control"  aria-describedby="emailHelp" name="this.name"[(ngModel)]="this.name" placeholder="name">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Price</label>
+                              <div style="width:100%"> <i style="font-size:24px" class="fa dollarclass" style="width:8%;">&#xf155;</i>
+                                <input type="text" class="form-control" style="width: 92%;float: right;" placeholder="price" name="this.price"[(ngModel)]="this.price">
+                              </div>
+                             </div>
+                            <div class="col-sm-12 no-padding pd-class" >
+                                <p class="cls_rating">Rating</p>
+                              </div>
+                              <div class="col-sm-12 no-padding pddetails-class" >
+                                  <ul class="product-ul-class">
+                                  <li class="pdd-li-class" >
+                                      <input type="number"  name="this.rating" style="width:100%" [(ngModel)]="this.rating"
+                                                        min="1" max="10"> 
+                                  </li>
+                                </ul> 
+                                </div>
+                          </form>
+                         
+                    </div>
+                   
+                  </div>
+                  <div class="col-sm-12" style="text-align: right;">
+                      <button type="button" class="btn btn-primary btn-sm" (click)="addProduct()">Add</button>
+                      <button type="button" class="btn btn-success btn-sm" (click)="updateProduct()">Save</button>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="deleteProduct()">Delete</button>
+                      <button type="button" class="btn btn-warning btn-sm" (click)="clearProduct()">Cancel</button>
+                      
+
+                    </div>
+                  
+          </div>
+          
+        </div>
+      </div>  
+      </div>
+    </div>
+
+  </div>
+</section>
